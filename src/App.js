@@ -6,6 +6,7 @@ import Login from "./components/layout/Login";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Dashboard from "./components/layout/Dashboard";
 import Register from "./components/layout/Register";
+import Home from "./components/layout/Home";
 
 class App extends Component {
   render() {
@@ -15,7 +16,7 @@ class App extends Component {
           <Appbar />
 
           <Switch>
-            <Route exact path="/" component={Login} />
+          <Route exact path="/" component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/dashboard" component={Dashboard} />

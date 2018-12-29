@@ -6,7 +6,7 @@ import { signIn } from "../../store/actions/Authactions";
 import { Redirect } from "react-router-dom";
 
 import Paper from "@material-ui/core/Paper";
-import Typography from '@material-ui/core/Typography';
+import Typography from "@material-ui/core/Typography";
 
 class Login extends React.Component {
   state = {
@@ -26,7 +26,7 @@ class Login extends React.Component {
   };
 
   render() {
-    const { auth } = this.props;
+    const { auth, authError } = this.props;
     if (auth.uid) return <Redirect to="/dashboard" />;
 
     return (
@@ -41,7 +41,7 @@ class Login extends React.Component {
       >
         <Paper style={{ padding: "50px" }} elevation={5}>
           <Typography component="h2" variant="display3" gutterBottom>
-           Log in
+            Log in
           </Typography>
           <TextField
             id="email"
@@ -69,6 +69,9 @@ class Login extends React.Component {
           >
             login
           </Button>
+          <div style={{color:"red",margin:"auto"}}>
+            {authError ? <p>{authError}</p> : null}
+          </div>
         </Paper>
       </div>
     );

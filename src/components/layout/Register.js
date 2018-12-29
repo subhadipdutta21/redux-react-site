@@ -90,7 +90,7 @@ class Register extends React.Component {
             >
               sign up
             </Button>
-            <div className="red-text center">
+            <div  style={{color:"red",margin:"auto"}}>
               {authError ? <p>{authError}</p> : null}
             </div>
           </div>
